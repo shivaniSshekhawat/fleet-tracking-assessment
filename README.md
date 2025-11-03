@@ -20,7 +20,7 @@ If you encounter issues with data generation, pre-generated sample data is avail
 
 ## Data Structure
 
-Your dataset will contain **5 different trip scenarios** with comprehensive event coverage:
+Your dataset contains **5 simultaneous trips** being driven by different drivers across the United States:
 
 1. **Cross-Country Long Haul** - Transcontinental freight delivery (10,000+ events)
 2. **Urban Dense Delivery** - Dense urban route with frequent updates (500+ events) 
@@ -28,19 +28,32 @@ Your dataset will contain **5 different trip scenarios** with comprehensive even
 4. **Southern Technical Issues** - Route with device and technical problems (1,000+ events)
 5. **Regional Logistics** - Regional route with fuel management events (2,000+ events)
 
+Each trip progresses independently with its own timeline, events, and challenges. Your dashboard should handle monitoring all trips simultaneously while providing both individual trip details and fleet-wide insights.
+
 **📖 [FLEET_TRACKING_EVENT_TYPES.md](./FLEET_TRACKING_EVENT_TYPES.md)** - Complete reference for all 27 event types in your dataset
 
 ## Tasks
 
 ### Dashboard Creation:
 
-- **Real-time Visualization**: Create a dashboard that simulates real-time fleet tracking using event timestamps
-- **Interactive Maps**: Display vehicle movements on interactive maps with route visualization
-- **Operational Metrics**: Show key metrics like speed, fuel levels, alerts, trip progress, and milestones
-- **Event Processing**: Handle all event types including lifecycle, location, technical, and operational events
-- **Alert Management**: Visualize violations, technical issues, fuel warnings, and cancellations
-- **Multi-trip Support**: Display and manage multiple concurrent vehicle trips
-- **Timeline Controls**: Implement playback controls for event streaming simulation
+Build a comprehensive fleet tracking dashboard that displays:
+
+- **Individual Trip Data**: Show detailed metrics and progress for each of the 5 concurrent trips
+- **Collective Fleet Metrics**: Display overall fleet insights (e.g., how many trips completed 50%, 80%, etc.)
+- **Real-time Simulation**: Use event timestamps to simulate live fleet tracking
+
+You have complete creative freedom in choosing what metrics to display, how to visualize the data, and what insights to highlight. Focus on creating a dashboard that would be valuable for fleet managers monitoring multiple simultaneous trips.
+
+### Real-time Data Simulation:
+
+Since the trip data contains timestamps, you'll need to simulate real-time behavior. Here are some approaches you can use:
+
+- **Local Interval Function**: Use `setInterval()` or similar to process events based on their timestamps
+- **Streaming API**: Create a mock API endpoint that serves events in real-time sequence
+- **Playback Controls**: Allow users to control the simulation speed (1x, 5x, 10x speed)
+- **Time-based Processing**: Filter and display events as if they're happening "now" based on simulation time
+
+Choose the approach that best demonstrates your technical skills and creates the most engaging user experience.
 
 ### Technical Requirements:
 
@@ -61,40 +74,22 @@ Your dataset will contain **5 different trip scenarios** with comprehensive even
 Your submission will be evaluated based on:
 
 - **Real-time Processing**: Effectiveness in simulating real-time fleet tracking
-- **Dashboard Design**: Clarity, aesthetics, and usability of the fleet management interface
+- **Dashboard Design**: Clarity, aesthetics, and usability of the interface
 - **Technical Implementation**: Code quality, performance, and architecture decisions
-- **Data Insights**: Ability to present meaningful fleet operational insights
-- **Event Handling**: Comprehensive coverage of different event types and edge cases
-- **User Experience**: Intuitive controls and information presentation
+- **Data Insights**: Ability to present meaningful trip and fleet insights
+- **User Experience**: Intuitive navigation and information presentation
 
-## Assessment Scenarios
+## What Your Dashboard Should Handle
 
-Your dashboard should effectively handle these scenarios:
+Your dashboard will work with 5 different trip types, each with unique characteristics:
 
-### Scenario 1: Long Haul Monitoring
-- Track transcontinental delivery over multiple days
-- Display progress milestones and scheduled stops
-- Handle extended event streams (10,000+ events)
+1. **Long Haul Trip** - Extended cross-country delivery with many events
+2. **Urban Trip** - Dense city delivery with frequent location updates  
+3. **Cancelled Trip** - Trip that gets cancelled partway through
+4. **Technical Issues Trip** - Trip with device problems and signal issues
+5. **Logistics Trip** - Regional delivery with fuel and operational events
 
-### Scenario 2: Urban Operations
-- Monitor dense urban delivery with frequent location updates
-- Show real-time traffic and route optimization
-- Handle high-frequency event processing
-
-### Scenario 3: Emergency Response
-- Display trip cancellation and emergency scenarios
-- Show alert escalation and incident management
-- Handle abrupt event stream termination
-
-### Scenario 4: Technical Issues
-- Visualize device malfunctions and signal problems
-- Display system health and diagnostic information
-- Handle error states and recovery scenarios
-
-### Scenario 5: Operational Efficiency
-- Monitor fuel consumption and refueling events
-- Display maintenance alerts and operational metrics
-- Show cost optimization insights
+Focus on creating a clean, intuitive interface that displays trip progress, basic metrics, and handles the different event types present in your data.
 
 ## Submission Guidelines
 
